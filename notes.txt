@@ -1,0 +1,106 @@
+Tic Tac Toe Notes
+
+X first move: take top right corner
+O first move: take center, else take top right corner
+
+Rules for Movement:
+1. Look for winning moves and take them
+2. Look for losing moves and block them them
+3. If opponent goes in a corner or center, take opposite corner, if that is taken take any free corner
+4. If opponent goes in a center edge, take center space, else take the opposite center edge
+
+If the last move made was to block a win, take any remaining corner space, else takes any remaining space
+
+If no moves are made via above rules, pick random free space
+
+X and O string (might not use)
+O: "/--\\\n|  |\n|  |\n\\--/"
+X: "\\  /\n \\/\n /\\\n/  \\"
+
+
+Addressing play space:
+ 0 1 2
+0_|_|_
+1_|_|_
+2 | |
+
+Horizontal iteration
+for x in range(3):
+    for y in range(3):
+        print(playspace[x][y])
+
+
+Verticle iteration    
+for y in range(3):
+    for x in range(3):
+        print(playspace[x][y])
+
+
+Diagonal iteration
+for x in range(3):
+    print(playspace[x][x])
+    
+y = 0
+for x in reversed(range(3)):
+    print(playspace[x][y])
+    y += 1
+
+Function Breakdown:
+
+Init:
+	Inputs: none
+	Outputs: none
+	Domain Knowledge:
+	Examples:
+	Algorithm: Set the playspace array to all 0s
+		   set last turn to 0
+		   clear last move array
+
+Draw Playspace:
+	Inputs: playspace array
+	Output: printed Playspace
+	Domain Knowledge:
+	Examples:
+	Algorithm:
+
+Plot Move:
+	Inputs: playspace array
+	Output: printed Playspace
+	Domain Knowledge:
+	Examples:
+	Algorithm:
+
+Player Input:
+	Inputs: location of desired move
+	Output: none
+	Domain Knowledge: What symbol represents the player
+	Examples: 
+	Algorithm: 
+
+Wincheck:
+	Inputs: playspace array
+	Output: direction of win, winning symbol/draw
+	Domain Knowledge:
+	Examples:
+	Algorithm: iterate horizontally to check for win,
+	           iterate vertically to check for win,
+	           iterate diagonally to check for win,
+	           if wins are detected call winstate() with winning symbol and direction
+
+Winstate:
+	Inputs: direction of winning combination, winning symbol/draw
+	Output: 
+	Domain Knowledge: 
+	Examples: 
+	Algorithm: iterate vertically through playspace
+
+Computermove:
+	Inputs: 
+	Output: 
+	Domain Knowledge:
+	Examples:
+	Algorithm: 1. Look for winning moves and take them
+		   2. Look for losing moves and block them them
+		   3. If opponent goes in a corner or center, take opposite corner, if that is taken take any free corner
+		   4. If opponent goes in a center edge, take center space, else take the opposite center edge
+		   5. If the last move was made to block a win then go in any random remaining corner, else any random free space

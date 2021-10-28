@@ -1,0 +1,73 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2580
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww33400\viewh19880\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Function Breakdown:\
+\
+Init:\
+	Inputs: players side choice\
+	Outputs: none\
+	Domain Knowledge: \
+	Examples:	\
+	Algorithm:	Set the playspace array to all 0s\
+		     	set last turn to 0\
+			clear last move array\
+			ask for the player\'92s choice of side\
+			call the starting method according to players choice\
+\
+Draw Playspace:\
+	Inputs: none\
+	Output: printed Playspace\
+	Domain Knowledge: playspace array\
+	Examples:\
+	Algorithm:	iterate through the playspace array\
+\
+Plot Move:\
+	Inputs: playspace array, x coordinate, y coordinate\
+	Output: none\
+	Domain Knowledge:\
+	Examples:\
+	Algorithm:	set value at the input coordinates equal to the value for the current sides turn\
+\
+Player Input:\
+	Inputs: location of desired move\
+	Output: none\
+	Domain Knowledge: What symbol represents the player\
+	Examples: \
+	Algorithm: \
+\
+Wincheck:\
+	Inputs: playspace array\
+	Output: direction of win, winning symbol/draw\
+	Domain Knowledge:\
+	Examples:	\
+	Algorithm:	iterate horizontally to check for win\
+			iterate vertically to check for win,\
+			iterate diagonally to check for win,\
+			if wins are detected call winstate() with winning symbol and direction\
+\
+Winstate:\
+	Inputs: direction of winning combination, winning symbol/draw\
+	Output: printed statement regarding which side has won\
+	Domain Knowledge: \
+	Examples: 	\'93o has won with a line diagonally\'94\
+			\'93x has won with a line vertically\'94\
+			\'93Game is a draw\'94\
+	Algorithm:	print which symbol has won and in which direction\
+			ask for user input about if player wants to play again\
+			if yes, call init method and reset everything\
+			if no, exit program\
+\
+Computermove:\
+	Inputs: \
+	Output: \
+	Domain Knowledge:\
+	Examples:\
+	Algorithm:	1. Look for winning moves and take them\
+			2. Look for losing moves and block them them\
+			3. \
+			5. If the last move was made to block a win then go in any random remaining corner, else any random free space\
+}
